@@ -15,7 +15,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir psycopg2 gunicorn
+RUN pip install --no-cache-dir psycopg2 gunicorn pymssql
 
 # Copy the wheel file from the builder stage
 COPY --from=builder /tmp/dist/*.whl /dist/
