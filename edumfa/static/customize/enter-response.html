@@ -1,0 +1,37 @@
+<div class="well">
+    <form name="formResponse" class="form-signin" role="form" novalidate>
+        <div class="center" ng-show="challenge_multiple_tokens">
+            <p ng-show="browserLanguage === 'de'">
+              Bitte geben Sie eines Ihrer Token ein.
+            </p>
+            <p ng-show="browserLanguage === 'en'">
+              Please enter one of your tokens.
+            </p>
+        </div>
+        <div class="center"
+            ng-if="image">
+            <img width="250" ng-src="{{ image }}" />
+        </div>
+
+        <div ng-hide="hideResponseInput">
+
+            <input type="hidden" name="username" id="username"
+                   ng-model="login.username">
+            <input type="hidden" name="transactionid" id="transactionid"
+                   ng-model="transactionid">
+
+
+            <input name="otp" type="text" autocomplete="one-time-code"
+                   id="otp" class="form-control"
+                   ng-model="login.password" required
+                   placeholder="Token"/>
+
+            <div class="text-center">
+                <button ng-click="authenticate()"
+                        ng-disabled="authForm.$invalid"
+                        class="btn btn-primary btn-block" translate>Log In
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

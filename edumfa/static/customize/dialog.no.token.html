@@ -1,0 +1,51 @@
+<!-- Modal -->
+
+<!-- this dialog is displayed, if the logged-in user is or role "user" and he has no tokens. -->
+
+<div class="modal fade lock-dialog" id="dialogNoToken" tabindex="-1"
+     role="dialog"
+     ng-show="dialogNoToken == true"
+     data-backdrop="static" data-keyboard="false"
+     aria-labelledby="myModalNoToken"
+     aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalNoToken" translate
+                >Welcome</h4>
+            </div>
+
+            <div class="modal-body" ng-show="browserLanguage === 'de'">
+              <p>Bevor Sie beginnen und ein Token erstellen, laden Sie sich bitte eine der <a href="https://xwiki.zdv.uni-tuebingen.de/bin/view/Campus%20IT%20Customer%20Services%20%28CICS%29/Anleitungen%20%7C%20FAQ/VPN%20-%20Remote-Zugang/eduMFA/#HEmpfehlungenfFCrAuthenticatorApps">Empfohlenen Authenticator Apps</a> auf Ihr Smartphone.</p>
+
+              <p>Bitte vergewissern Sie sich die Anleitung gelesen zu haben: <a href="https://wiki.uni-tuebingen.de/short/30175">ZDV Wiki</a></p>
+            </div>
+            <div class="modal-body" ng-show="browserLanguage === 'en'">
+              <p>Before you start and create a token, please download one of the <a href="https://xwiki.zdv.uni-tuebingen.de/bin/view/Campus%20IT%20Customer%20Services%20%28CICS%29/Anleitungen%20%7C%20FAQ/VPN%20-%20Remote-Zugang/eduMFA/?language=en#HRecommendationsforauthenticatorapps">recommended authenticator apps</a> onto your smartphone.</p>
+
+              <p>Please make sure to have read the instructions first: <a href="https://wiki.uni-tuebingen.de/short/30175">ZDV Wiki</a></p>
+            </div>
+            <!-- <div class="modal-body" translate> -->
+            <!--     eduMFA is a system to manage your tokens. -->
+            <!--     You currently have no token assigned. -->
+            <!--     You can manage your own tokens here - you can create new tokens, set the PIN of the tokens, -->
+            <!--     disable tokens or even delete tokens. -->
+            <!-- </div> -->
+
+
+            <!--
+            <div>
+            You could also add links here that point to the enrollment tab like this:
+            <a href="http://localhost:5000/#/token/enroll//" ng-click="closeNoToken()">Enroll a token!</a>
+            </div>
+            -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"
+                        ng-click="closeNoToken()" translate>OK
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
